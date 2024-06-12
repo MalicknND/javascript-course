@@ -252,32 +252,48 @@ if (age >= 18) {
         }
         
         if (favorite !== 23) console.log("Why not use 23");
-*/
+    // ******************************************************************************
+        // Boolean logic
+        // Logical operators
+        
+        const hasDriverLicense = true; // A
+        const hasGoodVision = true; // B
+        
+        console.log(hasDriverLicense && hasGoodVision);
+        console.log(hasDriverLicense || hasGoodVision);
+        console.log(!hasDriverLicense);
+        
+        const shouldDrive = hasDriverLicense && hasGoodVision;
+        
+        // if (shouldDrive) {
+            //   console.log("Amy is able to drive");
+            // } else {
+                //   console.log("Someone else should drive...");
+                // }
+                
+                const isTired = false; //C
+                
+                console.log(hasDriverLicense && hasGoodVision && isTired);
+                
+                if (hasDriverLicense && hasGoodVision && !isTired) {
+                    console.log("Amy is able to drive");
+                    } else {
+                        console.log("Someone else should drive...");
+                }
+    */
+
 // ******************************************************************************
-// Boolean logic
-// Logical operators
+// Challenge 3
 
-const hasDriverLicense = true; // A
-const hasGoodVision = true; // B
+const scoreDolphins = (96 + 108 + 89) / 3;
+console.log(scoreDolphins);
+const scoreKoalas = (88 + 91 + 110) / 3;
+console.log(scoreKoalas);
 
-console.log(hasDriverLicense && hasGoodVision);
-console.log(hasDriverLicense || hasGoodVision);
-console.log(!hasDriverLicense);
-
-const shouldDrive = hasDriverLicense && hasGoodVision;
-
-// if (shouldDrive) {
-//   console.log("Amy is able to drive");
-// } else {
-//   console.log("Someone else should drive...");
-// }
-
-const isTired = false; //C
-
-console.log(hasDriverLicense && hasGoodVision && isTired);
-
-if (hasDriverLicense && hasGoodVision && !isTired) {
-  console.log("Amy is able to drive");
-} else {
-  console.log("Someone else should drive...");
+if (scoreDolphins > scoreKoalas) {
+  console.log("Dolphins win the trophy");
+} else if (scoreDolphins < scoreKoalas) {
+  console.log("Koalas win the trophy");
+} else if (scoreDolphins === scoreKoalas) {
+  console.log("Both win the trophy");
 }
