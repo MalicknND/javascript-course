@@ -30,3 +30,20 @@ console.log(appleOrangeJuice);
 */
 
 // ******************************************************************************
+
+// Function declarations vs expressions
+
+// function declarations ( WE CAN CALL THIS FUNCTION BEFORE DECLARATION)
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1991);
+console.log(age1);
+
+// function expressions
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+const age2 = calcAge2(1991);
+console.log(age2);
