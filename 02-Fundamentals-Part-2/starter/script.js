@@ -29,7 +29,6 @@ const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 
 
-*/
 // ******************************************************************************
 
 // Function declarations vs expressions
@@ -63,5 +62,19 @@ const yearUntilRetirement = (birthYear, firstName) => {
 
 console.log(yearUntilRetirement(1991, "Malick"));
 console.log(yearUntilRetirement(1980, "Amy"));
+*/
 
 // ******************************************************************************
+// Functions calling other functions
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+  const juice = `Juice with ${applePieces} piece of apple and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
