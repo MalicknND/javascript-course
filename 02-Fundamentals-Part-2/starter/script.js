@@ -229,7 +229,34 @@ const malick = {
   friends: ["Bamba", "Amy", "Malick"],
 };
 
-// un objet est constitué de paires clé-valeur appelées propriétés
-// une propriété est constituée d'une clé (également appelée nom de propriété) et d'une valeur
-// un attribut est une variable stockée dans un objet
-// un méthode est une fonction stockée dans un objet
+//DOT VS BRACKET NOTATION
+console.log(malick);
+console.log(malick.lastName);
+console.log(malick["lastName"]);
+
+const nameKey = "Name";
+console.log(malick["first" + nameKey]);
+console.log(malick["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about Malick? Choose between firstName, lastName, age, job and friends"
+);
+
+if (malick[interestedIn]) {
+  console.log(malick[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, job and friends"
+  );
+}
+
+malick.location = "Senegal";
+malick["twitter"] = "@malickndiaye";
+console.log(malick);
+
+// Challenge
+// Malick has 3 friends and his best friend is Amy
+
+console.log(
+  `${malick.firstName} has ${malick.friends.length} friends, and her best friend is ${malick.friends[1]}`
+);
