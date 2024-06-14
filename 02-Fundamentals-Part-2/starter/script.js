@@ -350,7 +350,7 @@ for (let rep = 0; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
 }
   
-*/
+
 
 // ******************************************************************************
 
@@ -398,4 +398,31 @@ console.log("---BREAK WITH NUMBER---");
 for (let i = 0; i < malick.length; i++) {
   if (typeof malick[i] === "number") break;
   console.log(malick[i], typeof malick[i]);
+}
+*/
+
+// ******************************************************************************
+// Looping Backwards and Loops in Loops
+
+const malick = [
+  "Malick",
+  "NDIAYE",
+  2037 - 1998,
+  "Student",
+  ["Bamba", "Amy", "Malick"],
+];
+
+// 0, 1, ..., 4
+// 4, 3, ..., 0
+for (let i = malick.length - 1; i >= 0; i--) {
+  console.log(i, malick[i]);
+}
+
+// Loop inside a loop
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
+  }
 }
