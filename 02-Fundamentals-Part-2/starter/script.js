@@ -216,7 +216,7 @@ function calcTip(bill) {
   const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
   
   console.log(bills, tips, totals);
-  */
+
 
 // ******************************************************************************
 // Introduction to Objects
@@ -260,3 +260,44 @@ console.log(malick);
 console.log(
   `${malick.firstName} has ${malick.friends.length} friends, and her best friend is ${malick.friends[1]}`
 );
+
+*/
+
+// ******************************************************************************
+
+// Object Methods
+
+// un objet est une collection de clés et de valeurs (propriétés)
+const malick = {
+  firstName: "Malick",
+  lastName: "NDIAYE",
+  birthYear: 1998,
+  job: "Student",
+  friends: ["Bamba", "Amy", "Malick"],
+  haveDriverLicense: true,
+
+  // Method
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+  // calcAge: function () {
+  //   return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.haveDriverLicense ? "a" : "no"} driver's license`;
+  },
+};
+console.log(malick.calcAge());
+console.log(malick.age);
+console.log(malick.age);
+console.log(malick.age);
+// console.log(malick["calcAge"](1998));
+console.log(malick.getSummary());
