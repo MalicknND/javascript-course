@@ -301,7 +301,7 @@ console.log(malick.age);
 console.log(malick.age);
 // console.log(malick["calcAge"](1998));
 console.log(malick.getSummary());
-*/
+
 // ******************************************************************************
 
 // Challenge 3
@@ -338,4 +338,14 @@ if (mark.bmi > john.bmi) {
   console.log(
     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
   );
+}
+
+*/
+
+// ******************************************************************************
+// Iteration: The for Loop
+
+// for loop keeps running while condition is TRUE
+for (let rep = 0; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
 }
