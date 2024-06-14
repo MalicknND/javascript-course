@@ -203,16 +203,33 @@ if (friends.includes("Amy")) {
   } else {
     console.log("You don't have a friend called Amy");
 }
-*/
+
 // ******************************************************************************
 // Challenge 2
 
 function calcTip(bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
+  }
+  
+  const bills = [125, 555, 44];
+  const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+  const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+  
+  console.log(bills, tips, totals);
+  */
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// ******************************************************************************
+// Introduction to Objects
 
-console.log(bills, tips, totals);
+const malick = {
+  firstName: "Malick",
+  lastName: "NDIAYE",
+  age: 2037 - 1998,
+  job: "Student",
+  friends: ["Bamba", "Amy", "Malick"],
+};
+
+// un objet est constitué de paires clé-valeur appelées propriétés
+// une propriété est constituée d'une clé (également appelée nom de propriété) et d'une valeur
+// un attribut est une variable stockée dans un objet
+// un méthode est une fonction stockée dans un objet
