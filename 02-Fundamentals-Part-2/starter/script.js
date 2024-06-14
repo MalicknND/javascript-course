@@ -340,7 +340,7 @@ if (mark.bmi > john.bmi) {
   );
 }
 
-*/
+
 
 // ******************************************************************************
 // Iteration: The for Loop
@@ -348,4 +348,54 @@ if (mark.bmi > john.bmi) {
 // for loop keeps running while condition is TRUE
 for (let rep = 0; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+}
+  
+*/
+
+// ******************************************************************************
+
+// Looping Arrays, Breaking and Continuing
+
+const malick = [
+  "Malick",
+  "NDIAYE",
+  2037 - 1998,
+  "Student",
+  ["Bamba", "Amy", "Malick"],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < malick.length; i++) {
+  // reading from malick array
+  console.log(malick[i], typeof malick[i]);
+
+  // filling types array
+  // types[i] = typeof malick[i];
+  types.push(typeof malick[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  // reading from years array
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log("---ONLY STRINGS---");
+for (let i = 0; i < malick.length; i++) {
+  if (typeof malick[i] !== "string") continue;
+  console.log(malick[i], typeof malick[i]);
+}
+
+console.log("---BREAK WITH NUMBER---");
+for (let i = 0; i < malick.length; i++) {
+  if (typeof malick[i] === "number") break;
+  console.log(malick[i], typeof malick[i]);
 }
