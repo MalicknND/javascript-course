@@ -127,7 +127,6 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 };
 
 checkWinner(scoreDolphins, scoreKoalas);
-*/
 
 // ******************************************************************************
 // Introduction to Arrays
@@ -137,6 +136,7 @@ const friend2 = "Amy";
 const friend3 = "Malick";
 
 const friends = ["Bamba", "Amy", "Malick"];
+
 console.log(friends);
 
 // const years = new Array(1991, 1984, 2008, 2020);
@@ -171,3 +171,35 @@ const ages = [
 ];
 
 console.log(ages);
+*/
+// ******************************************************************************
+// Basic Array Operations Methods
+
+const friends = ["Bamba", "Amy", "Malick"];
+// Add elements to the end of an array
+const newLength = friends.push("Jay");
+console.log(friends);
+console.log(newLength);
+
+// Add elements to the beginning of an array
+friends.unshift("John");
+console.log(friends);
+
+// Remove elements from the end of an array
+const popped = friends.pop(); // Last element removed
+console.log(friends);
+console.log(popped);
+
+// Remove elements from the beginning of an array
+friends.shift(); // First element removed
+console.log(friends);
+
+console.log(friends.indexOf("Amy")); // return the index of the element
+
+console.log(friends.includes("Amy")); // return true or false
+
+if (friends.includes("Amy")) {
+  console.log("You have a friend called Amy");
+} else {
+  console.log("You don't have a friend called Amy");
+}
