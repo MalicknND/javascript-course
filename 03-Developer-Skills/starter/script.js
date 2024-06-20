@@ -153,3 +153,4 @@ const printForecast = arr => {
 };
 
 printForecast(data1);
+printForecast(data2);
