@@ -13,3 +13,14 @@ score.textContent = 10;
 const guess = document.querySelector('.guess');
 guess.value = 23;
 */
+
+// Handling Click Events
+
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+  console.log(guess, typeof guess);
+
+  if (!guess) {
+    document.querySelector('.message').textContent = '⛔ No number!';
+  }
+});
