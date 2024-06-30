@@ -6,8 +6,7 @@
 
 // JS ENGINE = program that executes JS code
 
-//
-function calcAge(birthYear) {
+/*function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
   function printAge() {
@@ -42,3 +41,52 @@ calcAge(1991);
 
 // Variable Environment: Hoisting and the TDZ
 // https://www.notion.so/Javascript-16fa533f16ca4027a5871fc38d4683f9?showMoveTo=true&saveParent=true
+
+*/
+
+// ******************************************************************************
+// Hoisting and TDZ in Practice
+// Variables
+console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'Jonas';
+let job = 'teacher';
+const year = 1991;
+
+// Functions
+
+console.log(addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
+
+// this is a function declaration
+function addDecl(a, b) {
+  return a + b;
+}
+
+// this is a function expression
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+// this is a arrow function
+var addArrow = (a, b) => a + b;
+
+// Example
+
+if (!numProducts) deleteShoppingCart();
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products deleted!');
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x); // true
+console.log(y === window.y); // false
+console.log(z === window.z); // false
