@@ -39,3 +39,6 @@ function calcAge(birthYear) {
 const firstName = 'Jonas';
 calcAge(1991);
 // console.log(age);
+
+// Variable Environment: Hoisting and the TDZ
+// https://www.notion.so/Javascript-16fa533f16ca4027a5871fc38d4683f9?showMoveTo=true&saveParent=true
