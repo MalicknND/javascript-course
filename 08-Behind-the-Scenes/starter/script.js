@@ -92,4 +92,42 @@ console.log(y === window.y); // false
 console.log(z === window.z); // false
 */
 // ******************************************************************************
-// The this Keyword
+// The this Keyword in Practice
+
+console.log(this);
+
+// this keyword is a special variable that is created for every execution context (every function). It takes the value of (points to) the "owner" of the function in which the this keyword is used.
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  // console.log(this);
+};
+calcAge(1991);
+
+// Arrow function don't get their own this keyword
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  // console.log(this);
+};
+calcAgeArrow(1980);
+
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+
+jonas.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+// Method borrowing
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
+
+const f = jonas.calcAge;
+// f(); // TypeError Cannot read property 'year' of undefined because f is a regular function call and not a method call so it doesn't have access to the object that is calling it.
+f();
