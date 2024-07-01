@@ -132,7 +132,7 @@ const f = jonas.calcAge;
 // f(); // TypeError Cannot read property 'year' of undefined because f is a regular function call and not a method call so it doesn't have access to the object that is calling it.
 f();
 
-*/
+
 
 // ******************************************************************************
 
@@ -182,3 +182,26 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5, 8);
+*/
+
+// ******************************************************************************
+
+// Primitives vs. Objects (Primitive vs. Reference Types)
+
+// Primitive types are sting, number, boolean, undefined, null, symbol, bigint
+// Reference types are object, array, function
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age); // 31
+console.log(oldAge); // 30
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend); // age: 27
+console.log('Me:', me); // age: 27
