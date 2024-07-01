@@ -42,7 +42,7 @@ calcAge(1991);
 // Variable Environment: Hoisting and the TDZ
 // https://www.notion.so/Javascript-16fa533f16ca4027a5871fc38d4683f9?showMoveTo=true&saveParent=true
 
-*/
+
 
 // ******************************************************************************
 // Hoisting and TDZ in Practice
@@ -90,3 +90,6 @@ const z = 3;
 console.log(x === window.x); // true
 console.log(y === window.y); // false
 console.log(z === window.z); // false
+*/
+// ******************************************************************************
+// The this Keyword
