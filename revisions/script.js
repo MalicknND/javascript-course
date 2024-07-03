@@ -1,160 +1,252 @@
 "use strict";
 // ******************************************************************************
 
-/* Fundamentals Part 1
-//ChALLENGE 1
-markMass = 78;
-markHeight = 1.69;
-johnMass = 92;
-johnHeight = 1.95;
-
-BMIMark = markMass / markHeight * 2;
-BMIJohn = johnMass / johnHeight * 2;
-
-const markHigherBMI = BMIJohn > BMIMark
-console.log(BMIJohn, BMIMark, markHigherBMI)
-
-//Challenge 2
-
-const markMass = 78;
-const markHeight = 1.69;
-const johnMass = 92;
-const johnHeight = 1.95;
-
-const BMIMark = (markMass / markHeight) * 2;
-const BMIJohn = (johnMass / johnHeight) * 2;
-
-if (BMIJohn > BMIMark) {
-  console.log(`John's BMI ${BMIJohn} is higher than Mark's BMI ${BMIMark} `);
-} else {
-  console.log(`Mark's BMI ${BMIMark} is higher than John's BMI ${BMIJohn} `);
-}
-
-// Challenge 3
-
-const Dolphins = (96 + 108 + 89) / 3;
-const Koalas = (88 + 91 + 110) / 3;
-console.log(Dolphins, Koalas);
-
-if (Dolphins > Koalas && Dolphins >= 100) {
-  console.log(`Dolphins win the trophy`);
-} else if (Koalas > Dolphins && Koalas >= 100) {
-  console.log(`Koalas win the trophy`);
-} else if (Dolphins === Koalas && Dolphins >= 100 && Koalas >= 100) {
-  console.log(`Both win the trophy`);
-} else {
-  console.log(`No one win`);
-}
-
-// Challenge 4
-let bill = 430;
-const tip = bill >= 50 && bill <= 500 ? 0.2 * bill : 0.15 * bill;
-console.log(
-  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
-);
-
-
-// ******************************************************************************
-// Fundamentals Part 2
-
-// Challenge 1
-const calcAverage = (a, b, c) => {
-  return (a + b + c) / 3;
-};
-
-const dolphins = calcAverage(44, 23, 71);
-const koalas = calcAverage(65, 54, 49);
-
-const checkWinner = (avgDophins, avgKoalas) => {
-  if (avgDophins > avgKoalas * 2) {
-    console.log(`Dophins ${avgDophins} vs ${avgKoalas})`);
-  } else if (avgKoalas > avgDophins * 2) {
-    console.log(`Koalas win (${avgKoalas} vs ${avgDophins})`);
-  } else {
-    console.log(`No teams wins !`);
-  }
-};
-
-checkWinner(dolphins, koalas);
-
-
-// Challenge 2
-
-const calcTip = (bill) => {
-  return bill >= 50 && bill <= 500 ? 0.2 * bill : 0.15 * bill;
-};
-
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const totals = [bills[0] + tips[1], bills[1] + tips[2], bills[2] + tips[2]];
-console.log(bills, tips, totals);
-
-
-// Challenge 3
-
-const mark = {
-  fullName: "Mark Miller",
-  mass: 78,
-  height: 1.69,
-
-  CalcBMI: function () {
-    this.bmi = this.mass / (this.height * 2);
-    return this.bmi;
+// Practice assignments
+const books = [
+  {
+    title: "Algorithms",
+    author: ["Robert Sedgewick", "Kevin Wayne"],
+    publisher: "Addison-Wesley Professional",
+    publicationDate: "2011-03-24",
+    edition: 4,
+    keywords: [
+      "computer science",
+      "programming",
+      "algorithms",
+      "data structures",
+      "java",
+      "math",
+      "software",
+      "engineering",
+    ],
+    pages: 976,
+    format: "hardcover",
+    ISBN: "9780321573513",
+    language: "English",
+    programmingLanguage: "Java",
+    onlineContent: true,
+    thirdParty: {
+      goodreads: {
+        rating: 4.41,
+        ratingsCount: 1733,
+        reviewsCount: 63,
+        fiveStarRatingCount: 976,
+        oneStarRatingCount: 13,
+      },
+    },
+    highlighted: true,
   },
-};
-
-const john = {
-  fullName: "John Smith",
-  mass: 92,
-  height: 1.95,
-
-  CalcBMI: function () {
-    this.bmi = this.mass / (this.height * 2);
-    return this.bmi;
+  {
+    title: "Structure and Interpretation of Computer Programs",
+    author: [
+      "Harold Abelson",
+      "Gerald Jay Sussman",
+      "Julie Sussman (Contributor)",
+    ],
+    publisher: "The MIT Press",
+    publicationDate: "2022-04-12",
+    edition: 2,
+    keywords: [
+      "computer science",
+      "programming",
+      "javascript",
+      "software",
+      "engineering",
+    ],
+    pages: 640,
+    format: "paperback",
+    ISBN: "9780262543231",
+    language: "English",
+    programmingLanguage: "JavaScript",
+    onlineContent: false,
+    thirdParty: {
+      goodreads: {
+        rating: 4.36,
+        ratingsCount: 14,
+        reviewsCount: 3,
+        fiveStarRatingCount: 8,
+        oneStarRatingCount: 0,
+      },
+    },
+    highlighted: true,
   },
-};
+  {
+    title: "Computer Systems: A Programmer's Perspective",
+    author: ["Randal E. Bryant", "David Richard O'Hallaron"],
+    publisher: "Prentice Hall",
+    publicationDate: "2002-01-01",
+    edition: 1,
+    keywords: [
+      "computer science",
+      "computer systems",
+      "programming",
+      "software",
+      "C",
+      "engineering",
+    ],
+    pages: 978,
+    format: "hardcover",
+    ISBN: "9780130340740",
+    language: "English",
+    programmingLanguage: "C",
+    onlineContent: false,
+    thirdParty: {
+      goodreads: {
+        rating: 4.44,
+        ratingsCount: 1010,
+        reviewsCount: 57,
+        fiveStarRatingCount: 638,
+        oneStarRatingCount: 16,
+      },
+    },
+    highlighted: true,
+  },
+  {
+    title: "Operating System Concepts",
+    author: ["Abraham Silberschatz", "Peter B. Galvin", "Greg Gagne"],
+    publisher: "John Wiley & Sons",
+    publicationDate: "2004-12-14",
+    edition: 10,
+    keywords: [
+      "computer science",
+      "operating systems",
+      "programming",
+      "software",
+      "C",
+      "Java",
+      "engineering",
+    ],
+    pages: 921,
+    format: "hardcover",
+    ISBN: "9780471694663",
+    language: "English",
+    programmingLanguage: "C, Java",
+    onlineContent: false,
+    thirdParty: {
+      goodreads: {
+        rating: 3.9,
+        ratingsCount: 2131,
+        reviewsCount: 114,
+        fiveStarRatingCount: 728,
+        oneStarRatingCount: 65,
+      },
+    },
+  },
+  {
+    title: "Engineering Mathematics",
+    author: ["K.A. Stroud", "Dexter J. Booth"],
+    publisher: "Palgrave",
+    publicationDate: "2007-01-01",
+    edition: 14,
+    keywords: ["mathematics", "engineering"],
+    pages: 1288,
+    format: "paperback",
+    ISBN: "9781403942463",
+    language: "English",
+    programmingLanguage: null,
+    onlineContent: true,
+    thirdParty: {
+      goodreads: {
+        rating: 4.35,
+        ratingsCount: 370,
+        reviewsCount: 18,
+        fiveStarRatingCount: 211,
+        oneStarRatingCount: 6,
+      },
+    },
+    highlighted: true,
+  },
+  {
+    title: "The Personal MBA: Master the Art of Business",
+    author: "Josh Kaufman",
+    publisher: "Portfolio",
+    publicationDate: "2010-12-30",
+    keywords: ["business"],
+    pages: 416,
+    format: "hardcover",
+    ISBN: "9781591843528",
+    language: "English",
+    thirdParty: {
+      goodreads: {
+        rating: 4.11,
+        ratingsCount: 40119,
+        reviewsCount: 1351,
+        fiveStarRatingCount: 18033,
+        oneStarRatingCount: 1090,
+      },
+    },
+  },
+  {
+    title: "Crafting Interpreters",
+    author: "Robert Nystrom",
+    publisher: "Genever Benning",
+    publicationDate: "2021-07-28",
+    keywords: [
+      "computer science",
+      "compilers",
+      "engineering",
+      "interpreters",
+      "software",
+      "engineering",
+    ],
+    pages: 865,
+    format: "paperback",
+    ISBN: "9780990582939",
+    language: "English",
+    thirdParty: {
+      goodreads: {
+        rating: 4.7,
+        ratingsCount: 253,
+        reviewsCount: 23,
+        fiveStarRatingCount: 193,
+        oneStarRatingCount: 0,
+      },
+    },
+  },
+  {
+    title: "Deep Work: Rules for Focused Success in a Distracted World",
+    author: "Cal Newport",
+    publisher: "Grand Central Publishing",
+    publicationDate: "2016-01-05",
+    edition: 1,
+    keywords: ["work", "focus", "personal development", "business"],
+    pages: 296,
+    format: "hardcover",
+    ISBN: "9781455586691",
+    language: "English",
+    thirdParty: {
+      goodreads: {
+        rating: 4.19,
+        ratingsCount: 144584,
+        reviewsCount: 11598,
+        fiveStarRatingCount: 63405,
+        oneStarRatingCount: 1808,
+      },
+    },
+    highlighted: true,
+  },
+];
+// 1. Destructure the books array into two variables called firstBook and secondBook.
 
-console.log(mark.CalcBMI());
-console.log(john.CalcBMI());
+const [firstBook, secondBook] = books;
+console.log(firstBook, secondBook);
 
-console.log(john.bmi, mark.bmi);
+// 2. Destructure the books array into a variable called thirdBook. You must skip the first two books.
 
-if (mark.bmi > john.bmi) {
-  console.log(
-    `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
-  );
-} else if (john.bmi > mark.bmi) {
-  console.log(
-    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
-  );
-}
+const [, , thirdBook] = books;
+console.log(thirdBook);
 
-*/
+// 3. Below is the nested ratings array that contains two other arrays. Destructure the nested ratings arrays into two variables called rating and ratingsCount. In the result of your destructuring, the ratings variable should store a number 4.19, and the ratingsCount variable should store a number 144584.
 
-//Challenge 4
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
+const ratings = [
+  ["rating", 4.19],
+  ["ratingsCount", 144584],
+];
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
-for (let i = 0; i < bills.length; i++) {
-  const tip = calcTip(bills[i]);
-  tips.push(tip);
-  totals.push(tip + bills[i]);
-}
+const [[, rating], [, ratingsCount]] = ratings;
+console.log(rating, ratingsCount);
 
-console.log(tips, totals);
+// 4. Below is the ratingStars array. Destructure it into three variables called fiveStarRatings, oneStarRatings and threeStarRatings. Assign the threeStarRatings variable with a default value of 0.
 
-const calcAverage = (arr) => {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
-  }
-  return sum / arr.length;
-};
-
-console.log(calcAverage([2, 3, 7]));
-console.log(calcAverage(totals));
-console.log(calcAverage(tips));
+const ratingStars = [63405, 1808];
+const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;

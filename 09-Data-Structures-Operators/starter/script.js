@@ -26,4 +26,109 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
+
+//
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
+
+// Destructuring Objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// Renaming the variables
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default Values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating Variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b); // 23 7
+
+// Nested Objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c); // 11 23
+
+// ******************************************************************************
+/*
+// Destructuring Objects
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// Destructuring Objects
+const [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
+
+const [first, , second] = restaurant.categories;
+console.log(first, second); // Italian Vegetarian
+
+// Switching Variables
+let [main, , secondary] = restaurant.categories;
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary); // Vegetarian Italian
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary); // Italian Vegetarian
+
+// Receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse); // Garlic Bread Pizza
+
+// Nested Destructuring
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j); // 2 [5, 6]
+
+const [i, , [j, k]] = nested;
+console.log(i, j, k); // 2 5 6
+
+// Default Values
+const [p = 1, q = 1, r = 1] = [8];
+console.log(p, q, r); // 8 1 1
+
+
+*/
+// ******************************************************************************
+
+// Destructuring Objects
