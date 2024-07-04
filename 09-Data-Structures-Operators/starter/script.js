@@ -50,6 +50,38 @@ const restaurant = {
   },
 };
 // ******************************************************************************
+// Short Circuiting (&& and ||)
+// Use any data type, return any data type, short-circuiting
+console.log('---- OR ----'); // Returns the first truthy value or the last value if all are falsy
+
+console.log(3 || 'Jonas'); // 3
+console.log('' || 'Jonas'); // Jonas
+console.log(true || 0); // true
+console.log(undefined || null); // null
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Hello
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10; // 10
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10; // 23
+console.log(guests2);
+
+console.log('---- AND ----'); // Returns the first falsy value or the last value if all are truthy
+console.log(0 && 'Jonas'); // 0
+console.log(7 && 'Jonas'); // Jonas
+
+console.log('Hello' && 23 && null && 'Jonas'); // null
+
+// Practical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+// this is the same as the above if statement but shorter and cleaner code
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// ******************************************************************************
 // Rest Pattern and Parameters
 /*
 // 1) Destructuring
