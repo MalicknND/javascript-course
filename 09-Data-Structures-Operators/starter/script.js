@@ -52,6 +52,40 @@ const restaurant = {
   },
 };
 // ******************************************************************************
+// Sets
+/*
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet); // Set(3) {"Pasta", "Pizza", "Risotto"}
+console.log(new Set('Jonas')); // Set(5) {"J", "o", "n", "a", "s"}
+
+console.log(orderSet.size); // 3
+console.log(orderSet.has('Pizza')); // true
+console.log(orderSet.has('Bread')); // false
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet); // Set(3) {"Pasta", "Pizza", "Garlic Bread"}
+
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique); // ['Waiter', 'Chef', 'Manager']
+
+console.log(new Set('jonasndiaye').size); // 10
+
+*/
+
+// ******************************************************************************
 // Coding Challenge #2
 /*
 Let's continue with our football betting app!
@@ -72,7 +106,6 @@ BONUS: Create an object called 'scorers' which contains the names of the players
       }
 
 GOOD LUCK 😀
-*/
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
