@@ -50,8 +50,43 @@ const restaurant = {
   },
 };
 // ******************************************************************************
-// The Nullish Coalescing Operator (??)
+// Logical Assignment Operators
+/*
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
 
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Malick',
+};
+
+// OR assignment operator
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+console.log(rest1.numGuests); // 20
+console.log(rest2.numGuests); // 10
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// Nullish Assignment Operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner &&= 'Malick';
+rest2.owner &&= 'Malick';
+
+console.log(rest1); //
+console.log(rest2); // 10
+
+*/
+
+// ******************************************************************************
+// The Nullish Coalescing Operator (??)
+/*
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
 console.log(guests); // 10
@@ -60,7 +95,7 @@ console.log(guests); // 10
 const guestCorrect = restaurant.numGuests ?? 10;
 
 console.log(guestCorrect); // 0
-
+*/
 // ******************************************************************************
 // Short Circuiting (&& and ||)
 // Use any data type, return any data type, short-circuiting
