@@ -50,8 +50,21 @@ const restaurant = {
   },
 };
 // ******************************************************************************
+// The Nullish Coalescing Operator (??)
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); // 10
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+
+console.log(guestCorrect); // 0
+
+// ******************************************************************************
 // Short Circuiting (&& and ||)
 // Use any data type, return any data type, short-circuiting
+/*
 console.log('---- OR ----'); // Returns the first truthy value or the last value if all are falsy
 
 console.log(3 || 'Jonas'); // 3
