@@ -52,9 +52,36 @@ const restaurant = {
   },
 };
 // ******************************************************************************
+//  Looping Objects: Object Keys, Values, and Entries
+
+// Property Names
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+// Property Values
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+// [key, value]
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+// ******************************************************************************
 
 // 114. Optional Chaining (?.)
-
+/*
 if (restaurant.openingHours && restaurant.openingHours.mon) {
   console.log(restaurant.openingHours.mon.open);
 }
@@ -83,6 +110,8 @@ console.log(users[1]?.name ?? 'User array empty'); // User array empty
 
 if (users.length > 0) console.log(users[0].name);
 else console.log('User array empty');
+
+*/
 
 // ******************************************************************************
 // Looping Arrays: The for-of Loop
