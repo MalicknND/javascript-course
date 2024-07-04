@@ -5,7 +5,7 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
-
+// Enhanced Object Literals
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
@@ -52,7 +52,37 @@ const restaurant = {
   },
 };
 // ******************************************************************************
-// Enhanced Object Literals
+
+// 114. Optional Chaining (?.)
+
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+// With optional chaining
+// console.log(restaurant.openingHours.mon?.open); //  undefined
+// console.log(restaurant.openingHours?.mon?.open); //  undefined
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist'); // ['Focaccia', 'Pasta']
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist'); // Method does not exist
+
+// Arrays
+const users = [{ name: 'Jonas', email: 'ndiaye@gmail.com' }];
+
+console.log(users[0]?.name ?? 'User array empty'); // Jonas
+console.log(users[1]?.name ?? 'User array empty'); // User array empty
+
+if (users.length > 0) console.log(users[0].name);
+else console.log('User array empty');
 
 // ******************************************************************************
 // Looping Arrays: The for-of Loop
