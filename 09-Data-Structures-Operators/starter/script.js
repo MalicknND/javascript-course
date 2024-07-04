@@ -50,7 +50,20 @@ const restaurant = {
   },
 };
 // ******************************************************************************
+// Looping Arrays: The for-of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]); // [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)] its create an array of arrays with the index and the value of the array in the menu
+
+// ******************************************************************************
 // Coding Challenge #1
+
+/*
 
 // Coding Challenge #1
 
@@ -70,7 +83,7 @@ Suppose we get data from a web service about a certain game (below). In this cha
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
 GOOD LUCK 😀
-*/
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -144,7 +157,8 @@ printGoals(...game.scored);
 
 // 7. The team with the lower odd is more likely to win.
 team1 < team2 && console.log('Team 1 is more likely to win');
-
+team1 > team2 && console.log('Team 2 is more likely to win');
+*/
 // ******************************************************************************
 // Logical Assignment Operators
 /*
