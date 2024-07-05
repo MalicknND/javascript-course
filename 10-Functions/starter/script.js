@@ -58,7 +58,6 @@ const newPassport = function (person) {
 
 newPassport(jonas); // {name: "Mr. Jonas Schmedtmann", passport: 52241907307}
 checkIn(flight, jonas); // {name: "Mr. Jonas Schmedtmann", passport: 52241907307} // Checked in
-*/
 
 // ******************************************************************************
 // Functions Accepting Callback Functions
@@ -88,3 +87,26 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5); // 👋 👋 👋
+*/
+
+// ******************************************************************************
+
+// Functions Returning Functions
+
+const greet = function (greeting) {
+  // Outer function
+  return function (name) {
+    // Inner function
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas'); // Hey Jonas
+greeterHey('Steven'); // Hey Steven
+
+greet('Hello')('Jonas'); // Hello Jonas
+
+// Challenge
+const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+greetArrow('Hi')('Jonas'); // Hi Jonas
