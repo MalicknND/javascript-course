@@ -52,7 +52,66 @@ const restaurant = {
   },
 };
 // ******************************************************************************
+// Working with Strings - Part 3
+
+/*
+
+// Split and Join
+// split method is used to split a string into an array of substrings, and returns the new array.
+console.log('a+very+nice+string'.split('+')); // ['a', 'very', 'nice', 'string']
+console.log('Jonas Schmedtmann'.split(' ')); // ['Jonas', 'Schmedtmann']
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+console.log(firstName, lastName); // Jonas Schmedtmann
+
+// Join method is used to join all elements of an array into a string.
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName); // Mr. Jonas SCHMEDTMANN
+
+// Capitalize
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica'); // Jessica
+capitalizeName('jonas'); // Jonas
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(35, '+')); // ++++++++Go to gate 23!++++++++
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(64637836)); // ****** 8736
+
+// Repeat
+const message2 = 'Bad weather... All Departures Delayed... ';
+console.log(message2.repeat(5)); //
+
+const planesInline = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+
+planesInline(5); // There are 5 planes in line ✈️✈️✈️✈️✈️
+planesInline(3); // There are 3 planes in line ✈️✈️✈️
+planesInline(12); // There are 12 planes in line ✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
+
+*/
+
+// ******************************************************************************
 // Working with Strings - Part 2
+/*
 const airline = 'TAP Air Portugal';
 
 console.log(airline.toLowerCase()); // tap air portugal
@@ -111,6 +170,7 @@ checkBaggage('I have a laptop, some Food and a pocket Knife'); // You are NOT al
 checkBaggage('Socks and camera'); // Welcome aboard!
 checkBaggage('Got some snacks and a gun for protection'); // You are NOT allowed on board
 
+*/
 // ******************************************************************************
 // Working with Strings - Part 1
 /*
