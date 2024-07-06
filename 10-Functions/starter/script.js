@@ -3,8 +3,7 @@
 // ******************************************************************************
 
 // Default Parameters
-/*
-const bookings = [];
+/*const bookings = [];
 const createBooking = function (flightNum, numPassengers = 1, price = 199) {
   // ES5
   // numPassengers = numPassengers || 1;
@@ -87,7 +86,7 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5); // 👋 👋 👋
-*/
+
 
 // ******************************************************************************
 
@@ -110,3 +109,42 @@ greet('Hello')('Jonas'); // Hello Jonas
 // Challenge
 const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 greetArrow('Hi')('Jonas'); // Hi Jonas
+
+*/
+
+// ******************************************************************************
+// The call and apply Methods
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function () {}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann'); // Jonas Schmedtmann booked a seat on Lufthansa flight LH239
+lufthansa.book(635, 'John Smith'); // John Smith booked a seat on Lufthansa flight LH635
+console.log(lufthansa); // {airline: "Lufthansa", iataCode: "LH", bookings: Array(2)}
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+// Method borrowing
+const book = lufthansa.book;
+
+// Does NOT work because the 'this' keyword is now pointing to undefined
+// book(23, 'Sarah Williams'); // Uncaught TypeError: Cannot read property 'airline' of undefined
+
+// Call method
+book.call(eurowings, 23, 'Sarah Williams'); // Sarah Williams booked a seat on Eurowings flight EW23
+console.log(eurowings); // {airline: "Eurowings", iataCode: "EW", bookings: Array(1)}
+
+book.call(lufthansa, 239, 'Mary Cooper'); // Mary Cooper booked a seat on Lufthansa flight LH239
