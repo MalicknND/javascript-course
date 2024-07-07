@@ -148,3 +148,19 @@ book.call(eurowings, 23, 'Sarah Williams'); // Sarah Williams booked a seat on E
 console.log(eurowings); // {airline: "Eurowings", iataCode: "EW", bookings: Array(1)}
 
 book.call(lufthansa, 239, 'Mary Cooper'); // Mary Cooper booked a seat on Lufthansa flight LH239
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper'); // Mary Cooper booked a seat on Swiss Air Lines flight LX583
+console.log(swiss); // {airline: "Swiss Air Lines", iataCode: "LX", bookings: Array(1)}
+
+// Apply method
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData); // George Cooper booked a seat on Swiss Air Lines flight LX583
+console.log(swiss); // {airline: "Swiss Air Lines", iataCode: "LX", bookings: Array(2)}
+
+book.call(swiss, ...flightData); //is the same as the apply method above (spread operator)
