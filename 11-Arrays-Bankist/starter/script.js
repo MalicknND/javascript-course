@@ -71,6 +71,90 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// ******************************************************************************
+// Arrays are objects
+
+/*let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// Slice Method
+/*
+console.log(arr.slice(2)); // ['c', 'd', 'e']
+console.log(arr.slice(2, 4)); // ['c', 'd']
+console.log(arr.slice(-2)); // ['e', 'd']
+console.log(arr.slice(1, -2)); // ['b', 'c']
+console.log(arr.slice()); // ['a', 'b', 'c', 'd', 'e']
+console.log([...arr]); // ['a', 'b', 'c', 'd', 'e']
+
+// Splice Method
+// console.log(arr.splice(2)); // ['c', 'd', 'e']
+
+arr.splice(-1);
+arr.splice(1, 2); // ['a', 'd']
+console.log(arr);
+
+
+// Reverse Method
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j']
+console.log(arr2); // ['f', 'g', 'h', 'i', 'j']
+
+// Concat Method
+const letters = arr.concat(arr2);
+console.log(letters); // ['a', 'b', 'c', 'd', 'e', 'j', 'i', 'h', 'g', 'f']
+console.log([...arr, ...arr2]); // ['a', 'b', 'c', 'd', 'e', 'j', 'i', 'h', 'g', 'f']
+
+// Join Method
+console.log(letters.join(' - ')); // 'a - b - c - d - e - j - i - h - g - f'
+
+
+// ******************************************************************************
+// The new at method
+const arr = [23, 11, 64];
+console.log(arr[0]); // 23
+console.log(arr.at(0)); // 23
+
+// getting last array element
+console.log(arr[arr.length - 1]); // 64
+console.log(arr.slice(-1)[0]); // 64
+console.log(arr.at(-1)); // 64
+
+console.log('jonas'.at(0)); // 'j'
+console.log('jonas'.at(-1)); // 's'
+*/
+
+// ******************************************************************************
+// Looping arrays: forEach
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log('---for of---');
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+// forEach with index
+console.log('---forEach---');
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`Movement: You deposited ${movement}`);
+  } else {
+    console.log(`Movement: You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+// forEach with index and array
+console.log('---forEach with index and array---');
+movements.forEach((movement, i) => {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+// in forEach the firt value is current value, after index and array
