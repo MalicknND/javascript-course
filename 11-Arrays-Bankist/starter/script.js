@@ -276,3 +276,28 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 console.log(movementsDescriptions);
 
 */
+
+// ******************************************************************************
+
+//  The filter method
+
+// Method 1
+const deposits = movements.filter(function (movement) {
+  return movement > 0;
+  // only return true for positive numbers
+  // otherwise, the filter will not include the number in the new array
+});
+
+console.log(deposits);
+// method 2
+const depositsFor = [];
+for (const mov of movements) {
+  if (mov > 0) {
+    depositsFor.push(mov);
+  }
+}
+console.log(depositsFor);
+
+// Method 3
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
